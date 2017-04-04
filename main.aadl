@@ -19,10 +19,10 @@ system implementation smart_home.impl
 		IP_DEVICES: device IPDevices::IPDevices.impl;
 		
 	connections
-		c1: port MAIN_CONTROL_ROUTER.out_mcr_rs -> REMOTE_SERVER.in_rs_mcr;
-		c2: port REMOTE_SERVER.out_rs_mcr -> MAIN_CONTROL_ROUTER.in_mcr_rs;
-		c3: port MAIN_CONTROL_ROUTER.out_mcr_clients -> CLIENTS.in_clients_mcr;
-		c4: port CLIENTS.out_clients_mcr -> MAIN_CONTROL_ROUTER.in_mcr_clients;
+		c1: port MAIN_CONTROL_ROUTER.out_mcr_remote -> REMOTE_SERVER.in_rs_mcr;
+		c2: port REMOTE_SERVER.out_rs_mcr -> MAIN_CONTROL_ROUTER.in_mcr_remote;
+		c3: port MAIN_CONTROL_ROUTER.out_mcr_remote -> CLIENTS.in_clients_mcr;
+		c4: port CLIENTS.out_clients_mcr -> MAIN_CONTROL_ROUTER.in_mcr_remote;
         c5: port MAIN_CONTROL_ROUTER.out_mcr_zd -> ZIGBEE_DEVICES.in_zd_mcr;
 		c6: port ZIGBEE_DEVICES.out_zd_mcr -> MAIN_CONTROL_ROUTER.in_mcr_zd;
         c7: port MAIN_CONTROL_ROUTER.out_mcr_ipd -> IP_DEVICES.in_ipd_mcr;
